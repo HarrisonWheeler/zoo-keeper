@@ -2,7 +2,15 @@ let carnivores = [];
 let vegetarians = [];
 
 class Cat {
-  constructor(name, color, gender, weight, sound, vegetarian, species, fly) {
+  constructor(
+    name = '',
+    color = '',
+    gender = '',
+    weight = 0,
+    sound = '',
+    vegetarian = false,
+    species = ''
+  ) {
     this.name = name;
     this.color = color;
     this.gender = gender;
@@ -25,12 +33,14 @@ class Pen {
   vegetarian() {
     this.cat.forEach((cat) => {
       if (cat.vegetarian == false) {
-        carnivores.push(cat)
-      } else if (cat.vegetarian == true)
-        vegetarians.push(cat)
+        carnivores.push(cat.color)
+      } else if (cat.vegetarian == true) {
+        vegetarians.push(cat.color)
+      }
     })
   }
-
-
-
 }
+
+let pen = new Pen([calico, mountainLion, tabbyCat, puma])
+
+pen.vegetarian()

@@ -33,9 +33,9 @@ class Pen {
   vegetarian() {
     this.cat.forEach((cat) => {
       if (cat.vegetarian == false) {
-        carnivores.push(cat.color)
+        carnivores.push(cat.species)
       } else if (cat.vegetarian == true) {
-        vegetarians.push(cat.color)
+        vegetarians.push(cat.species)
       }
     })
   }

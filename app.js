@@ -1,8 +1,5 @@
 let carnivores = [];
-let fliers = [];
-let housePets = [];
-
-// push animal attributes to global empty arrays
+let vegetarians = [];
 
 class Cat {
   constructor(name, color, gender, weight, sound, vegetarian, species, fly) {
@@ -13,38 +10,27 @@ class Cat {
     this.sound = sound;
     this.vegetarian = vegetarian;
     this.species = species;
-    this.fly = fly;
   }
 }
 
-let calico = new Cat("Koda", "Orange Black", "F", 10, "Meow", "Yes", "House Cat")
-let mountainLion = new Cat("Big Boy", "Brown", "F", 75, "Roar", "No", "Lion")
-let tabbyCat = new Cat("Jax", "Orange", "M", 10, "Meow", "Yes", "House Cat")
+let calico = new Cat("Koda", "Orange Black", "F", 10, "Meow", true, "House Cat")
+let mountainLion = new Cat("Big Boy", "Brown", "F", 75, "Roar", false, "Lion")
+let tabbyCat = new Cat("Jax", "Orange", "M", 10, "Meow", true, "House Cat")
+let puma = new Cat("Pumy", "Black", "M", 50, "Roar", false, "Tiger")
 
-// use push method in animal classes?
-class Bird {
-  constructor(name, color, gender, weight, sound, vegetarian, species, fly) {
-    this.name = name;
-    this.color = color;
-    this.gender = gender;
-    this.weight = weight;
-    this.sound = sound;
-    this.vegetarian = vegetarian;
-    this.species = species;
-    this.fly = fly;
+class Pen {
+  constructor(cat) {
+    this.cat = cat
   }
+  vegetarian() {
+    this.cat.forEach((cat) => {
+      if (cat.vegetarian == false) {
+        carnivores.push(cat)
+      } else if (cat.vegetarian == true)
+        vegetarians.push(cat)
+    })
+  }
+
+
+
 }
-
-let eagle = new Bird("American", "Brown", "M", 10, "Eee", "No", "Bald", "Yes")
-let robin = new Bird("Roby", "White", "F", 1, "Squeak", "Yes", "Ground", "No")
-
-// create function that iterates through global arrays and will group similar animal attributes
-
-function similarAnimals() {
-  let
-}
-
-
-
-
-
